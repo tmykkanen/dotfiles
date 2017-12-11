@@ -150,12 +150,14 @@ alias reload="exec ${SHELL} -l"
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
 
-# My Custom Aliases
-alias edit='atom'              # edit: Opens any file in Atom
-alias f='open -a Finder ./'  # f:            Opens current directory in MacOS Finder
-alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor' # Keep Homebrew Clean - https://gist.github.com/indiesquidge/ec010eca3ffa254788c2
+# edit: Opens any file in Atom
+alias edit='atom'
+
+# f: Opens current directory in MacOS Finder
+alias f='open -a Finder ./'
+# Keep Homebrew Clean - https://gist.github.com/indiesquidge/ec010eca3ffa254788c2
+alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
 
 #   finder.show/finder.hide: Toggle Show/Hide of hidden files in finder
-#   --------------------------------------------------------------------
 alias finder.show='defaults write com.apple.finder AppleShowAllFiles -boolean true; killall Finder'
 alias finder.hide='defaults write com.apple.finder AppleShowAllFiles -boolean false; killall Finder'
