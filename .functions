@@ -60,16 +60,15 @@ function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
 
-# My Custom Functions
-# trash: Moves a file to the MacOS trash
+# Moves a file to the macOS trash
 function trash () { command mv "$@" ~/.Trash ; }
 
-#   wav2mp3: converts wav to mp3 using VBR. Requires ffmpeg (https://trac.ffmpeg.org/wiki/Encode/MP3)
-#   --------------------------------------------------------------------
+# Converts wav to mp3 using VBR. Requires ffmpeg (https://trac.ffmpeg.org/wiki/Encode/MP3)
 function wav2mp3 () {
   ffmpeg -i $1.wav -codec:a libmp3lame -qscale:a 2 $1.mp3
 }
 
+# [Bash_Profile Refresh] Executes bootstrap.sh to refresh bash files with most recent versions.
 function bpr () {
   dir=$PWD;
   set -- -f;
