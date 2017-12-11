@@ -13,3 +13,7 @@ git config --global user.signingkey "${{SIGNINGKEY}}"
 # On Host Machine: gpg --export-secret-key -a > secretkey.asc
 # On New Machine: gpg --import secretkey.asc
 # To Shred: shred --remove secretkey.asc
+
+# Local Vars
+# Set computer name (as done via System Preferences → Sharing) (xxd -r -p <<< HEX => COMPUTERNAME)
+computerName="${{COMPUTERNAME}}"

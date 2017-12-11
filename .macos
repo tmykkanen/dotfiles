@@ -16,11 +16,11 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # General UI/UX                                                               #
 ###############################################################################
 
-# Set computer name (as done via System Preferences → Sharing) (xxd -r -p <<< 746c6d2d6465736b0a => tlm-desk)
-sudo scutil --set ComputerName "746c6d2d6465736b0a"
-sudo scutil --set HostName "746c6d2d6465736b0a"
-sudo scutil --set LocalHostName "746c6d2d6465736b0a"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "746c6d2d6465736b0a"
+# Set computer name (as done via System Preferences → Sharing) (xxd -r -p <<< Hex => Name)
+sudo scutil --set ComputerName $computerName
+sudo scutil --set HostName $computerName
+sudo scutil --set LocalHostName $computerName
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $computerName
 
 # Set standby delay to 24 hours (default is 1 hour)
 sudo pmset -a standbydelay 86400
