@@ -9,9 +9,9 @@ alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
 # Shortcuts
-alias d="cd ~/Documents/Dropbox"
+alias db="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
-alias dt="cd ~/Desktop"
+alias d="cd ~/Desktop"
 alias p="cd ~/github"
 alias g="git"
 
@@ -152,6 +152,9 @@ alias path='echo -e ${PATH//:/\\n}'
 
 # edit: Opens any file in Atom
 alias edit='atom'
+
+# cl: Clear terminal display
+alias cl='clear'
 
 # f: Opens current directory in MacOS Finder
 alias f='open -a Finder ./'

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Make vim the default editor.
+# Make Atom the default editor. Make Nano the default editor for git.
 export EDITOR="/Applications/Atom.app/Contents/MacOS/Atom -nw"
 export GIT_EDITOR=nano
 

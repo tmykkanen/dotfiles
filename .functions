@@ -61,9 +61,18 @@ function tre() {
 }
 
 # My Custom Functions
+# trash: Moves a file to the MacOS trash
+function trash () { command mv "$@" ~/.Trash ; }
 
 #   wav2mp3: converts wav to mp3 using VBR. Requires ffmpeg (https://trac.ffmpeg.org/wiki/Encode/MP3)
 #   --------------------------------------------------------------------
-    wav2mp3 () {
-      ffmpeg -i $1.wav -codec:a libmp3lame -qscale:a 2 $1.mp3
-    }
+function wav2mp3 () {
+  ffmpeg -i $1.wav -codec:a libmp3lame -qscale:a 2 $1.mp3
+}
+
+function bpr () {
+  dir=$PWD;
+  set -- -f;
+  source ~/github/dotfiles/bootstrap.sh;
+  cd "$dir";
+}
