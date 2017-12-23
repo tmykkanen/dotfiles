@@ -5,6 +5,11 @@ function mkd() {
 	mkdir -p "$@" && cd "$_";
 }
 
+# Move file enhanced
+function mvf() {
+  echo mv "$1" "$2/$1";
+}
+
 # Change working directory to the top-most Finder window location
 function cdf() { # short for `cdfinder`
 	cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')";
