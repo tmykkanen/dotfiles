@@ -79,6 +79,7 @@ brew install hugo
 brew install lame
 
 # Development tools
+brew install node
 brew install mongodb
 sudo mkdir -p /data/db
 sudo chmod 777 /data/db
