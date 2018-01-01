@@ -1,5 +1,31 @@
 #!/usr/bin/env bash
 
+# tmp function for testing
+function tmp() {
+  echo "Edit in .functions file to test bash functions."
+}
+
+# File Naming Function
+  #TODO: RENAME FUNCTION
+  #TODO: Add error checking using $# to check for valid input at $1 and at least two args.
+function fnm() {
+  # Assign $1 to token and shift $@
+  token=$1;
+  shift;
+
+  # Iterate through $@, processing each filename
+  for f in "$@"; do
+    # eval "file='${f}'";
+    var=`date -r $(stat -f %DB "${f}") +%Y%m%d_%H%M%S_`;
+    var+=$token;
+    var+="_"
+    rename -vn -A $var "${f}";
+  done
+
+  # # Iterate through $@, processing each filename
+  #   eval 'rename -vn -A `date -r $(stat -f %DB $_) +%Y%m%d_%H%M%S_` $@';
+}
+
 # Create a new directory and enter it
 function mkd() {
 	mkdir -p "$@" && cd "$_";
