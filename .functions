@@ -19,7 +19,7 @@ function fnm() {
     var=`date -r $(stat -f %DB "${f}") +%Y%m%d_%H%M%S_`;
     var+=$token;
     var+="_"
-    rename -vn -A $var "${f}";
+    rename -v -A $var "${f}";
   done
 
   # # Iterate through $@, processing each filename
