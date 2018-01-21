@@ -9,6 +9,7 @@ function tmp() {
   #TODO: RENAME FUNCTION
   #TODO: Add error checking using $# to check for valid input at $1 and at least two args.
 function fnm() {
+  # Example: rename -vnc -S "-" " " -A `date -r $(stat -f %DB "tMp-File.md") +%Y%m%d_%H%M%S_r2_` "tMp-File.md"
   # Assign $1 to token and shift $@
   token=$1;
   shift;
@@ -19,11 +20,9 @@ function fnm() {
     var=`date -r $(stat -f %DB "${f}") +%Y%m%d_%H%M%S_`;
     var+=$token;
     var+="_"
-    rename -v -A $var "${f}";
+    rename -vc -S "-" " " -A $var "${f}";
   done
 
-  # # Iterate through $@, processing each filename
-  #   eval 'rename -vn -A `date -r $(stat -f %DB $_) +%Y%m%d_%H%M%S_` $@';
 }
 
 # Create a new directory and enter it
