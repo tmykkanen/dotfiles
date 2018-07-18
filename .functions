@@ -5,6 +5,26 @@ function tmp() {
   echo "Edit in .functions file to test bash functions."
 }
 
+# Script for finding pdfs missing OCR data
+# from https://robservatory.com/find-and-fix-non-searchable-pdfs/
+function missingOCR() {
+  saveIFS=$IFS
+  IFS=$(echo -en "\n\b")
+
+  FilesToCheck=$(find `pwd` -maxdepth 99 -name "*.pdf")
+
+  for i in $FilesToCheck
+    do
+       errCheck=$(pdffonts ${i} 2>&1 | tail -1)
+       if [[ $errCheck =~ ^- ]]
+       then
+           printf $i"\n"
+       fi
+     done
+
+     IFS=$saveIFS
+}
+
 # File Naming Function
   #TODO: RENAME FUNCTION
   #TODO: Add error checking using $# to check for valid input at $1 and at least two args.
